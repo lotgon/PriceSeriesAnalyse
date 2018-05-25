@@ -18,6 +18,7 @@ This project try to classify symbol name based on 24*60 M1 Bid/Ask bars. There a
     layer_dense(units = N_y, activation = 'softmax')
 ```    
     Confusion Matrix:
+```
             AUDUSD EURUSD GBPUSD NZDUSD USDJPY XAGUSD XAUUSD XNGUSD
   AUDUSD    195    210     95     45     55    111     31      2
   EURUSD    129    251    189     26     36     73     38      2
@@ -27,4 +28,4 @@ This project try to classify symbol name based on 24*60 M1 Bid/Ask bars. There a
   XAGUSD     99     89     12     35     36    382     40      3
   XAUUSD    127    181    207     44     45     37     56      3
   XNGUSD     39      2      5     21      7     57    109    276
-    
+```    
