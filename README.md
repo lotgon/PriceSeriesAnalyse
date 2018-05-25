@@ -1,6 +1,7 @@
 # PriceSeriesAnalyse
 This project try to classify symbol name based on 24*60 M1 Bid/Ask bars. There are several models. The first one is NaiveModel 1D convolutional Filters, the second one will is sequential model based on LSTM (in progress). If the second model succeeds, embedding layer should be added to avoid retraining for each new symbol.
 #Naive Model
+```R
     layer_conv_1d(128, 3, padding = "same", activation = "relu", strides = 2, input_shape = c(T_X, N_x)) %>%
     layer_max_pooling_1d(strides = 2) %>%
     layer_dropout(0.1) %>% 
@@ -15,7 +16,7 @@ This project try to classify symbol name based on 24*60 M1 Bid/Ask bars. There a
     layer_dense(units = 32, activation = 'relu') %>%
     layer_dropout(rate = 0.4) %>%
     layer_dense(units = N_y, activation = 'softmax')
-    
+```    
     Confusion Matrix:
             AUDUSD EURUSD GBPUSD NZDUSD USDJPY XAGUSD XAUUSD XNGUSD
   AUDUSD    195    210     95     45     55    111     31      2
