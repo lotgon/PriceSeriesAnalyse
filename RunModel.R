@@ -30,14 +30,15 @@ y_test <- to_categorical(symbol2Index[testY[,]]$v, N_y)
 ##########
 
 #model <- CreateConvolutionalModel()
-load_model_hdf5("currentModel")
+#model <- CreateRNNModel()
+model <- load_model_hdf5("rnnModel")
 
 history <- model %>% fit(
   x_train, y_train, 
-  epochs = 500, batch_size = 128, 
-  validation_split = 0
+  epochs = 100, batch_size = 128, 
+  validation_split = 0.01
 )
-save_model_hdf5(model, "currentModel")
+save_model_hdf5(model, "rnnModel")
 plot(history)
 
 model %>% evaluate(x_test, y_test)
